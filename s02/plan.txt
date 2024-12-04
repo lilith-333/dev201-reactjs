@@ -1,0 +1,22 @@
+Rappel : 
+
+* modules en JS ( export default - import / export - { } )
+* intégration de react :
+
+html <div id="root"></div>
+
+let container = document.getElementById("root")
+let root = ReactDOM.createRoot(container)
+
+root.render(<App />)
+
+function App(){
+    return jsx;
+}
+
+babel 
+
+* POO en JS
+
+Les aspects avancees de JS (ES6)
+
