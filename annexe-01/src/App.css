@@ -1,0 +1,14 @@
+.container{
+  padding: 50px;
+}
+.style1{
+  color: red;
+  margin-left: 50px;
+}
+
+.style2{
+  list-style: none;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  background: red;
+}

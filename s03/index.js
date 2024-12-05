@@ -53,7 +53,7 @@ let livres=[
     {id :13,titre : "HTML & CSS",auteur :"RAMI",prix :340}
 ]
 
-console.log(livres.map(l=>l.titre));
+console.log(livres.map( (l,i) => l.titre));
 
 console.log(livres.filter(l=>l.auteur == "RAMI").map(l=>l.titre));
 
