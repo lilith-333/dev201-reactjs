@@ -1,0 +1,13 @@
+ES6 : les modules - les classes - array functions(map filter find reduce ...)
+
+React 
+
+MPA vs SPA
+
+CRA // VITE
+
+Composants : fonction // les classes
+
+props 
+
+? state
