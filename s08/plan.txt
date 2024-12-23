@@ -1,0 +1,9 @@
+ES6
+
+Component : class + function
+
+props
+
+state
+
+events
