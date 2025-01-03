@@ -1,0 +1,70 @@
+install npm redux react-redux
+
+//main.js index.js
+
+import {legacy_createStore as createStore} from 'redux'
+import reducer from './store/reducer.js'
+import {Provider} from 'react-redux'
+
+const store = createStore(reducer);
+
+<Provider store={store}>
+    <App />
+</Provider>
+
+// .store/reducer.js
+
+const intialState = {
+    articles : [],
+    admin:{}
+    user: [],
+    images : [],
+    comments :[],
+}
+
+const reducer = (state = intialState, action) => {
+    // traitement selon action.type
+    if(action.type == "ajouter"){
+        return {...state, articles: [...state.articles, action.payload]}
+    }
+    if(action.type = "modifier"){
+        return {...state, // modification par id (action.payload)}
+    }
+    return state;
+}
+
+// App.js
+
+import {connect} from 'react-redux'
+
+function App(props){
+
+    return (
+
+        <p> Total : {props.articles.length} </p>
+
+        <button onClick={() => props.ajouter(newArticle)}>Ajouter</button>
+        <button onClick={() => props.modifier(7)}>Modifier</button>
+        <button onClick={() => props.supprimer(9)}>Supprimer</button>
+    )
+}
+
+const mapStateToProps = (state) => {
+    return {
+        articles : state.articles,
+        users : state.users
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        ajouter : (newArticle) => dispatch({type:"ajouter", payload : newArticle}),
+        modifier : (id) => dispatch({type:"modifier", payload : id})
+        supprimer : (id) => dispatch({type:"supprimer", payload : id})
+    }
+} 
+
+export default connect(mapStateToProps,mapDispatchToProps)(App)
+
+// connect
+// hooks : useSelector() useDispatch()

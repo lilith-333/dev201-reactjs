@@ -1,3 +1,5 @@
+import * as types from "./actionsTypes"
+
 const initialState = {
     num : 0,
     test:true
@@ -41,15 +43,15 @@ const reducer = (state = initialState, action) => {
     */
 
         switch (action.type) {
-            case "incrementer":
+            case types.INCREMENTER:
                 return { ...state, num : state.num + 1}
-            case "decrementer":
+            case types.DECREMENTER:
                 return { ...state, num : state.num - 1}
-            case "reset":
+            case types.RESET:
                 return {...state, num:0}
-            case "incrementerBy":
+            case types.INCREMENTERBY:
                 return {...state, num : state.num + action.payload}
-            case "decrementerBy":
+            case types.DECREMENTERBY:
                 return {...state, num : state.num - action.payload}
             default:
                 return state
