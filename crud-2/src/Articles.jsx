@@ -22,11 +22,18 @@ export default function Articles() {
         setArticles([...articles,{id, title, body}])
     }
 
+    const editArticle = (id, updatedTitle, updatedBody) => {
+        const updatedArticles = articles.map(article =>
+            article.id === id ? { ...article, title: updatedTitle, body: updatedBody } : article
+        );
+        
+        setArticles(updatedArticles);
+    };
   return (
     <div>
         <AddArticle addArticle={saveArticle}/>
         <hr />
-        <ListArticles articles={articles}/>
+        <ListArticles articles={articles} editArticle={editArticle}/>
     </div>
   )
 }
